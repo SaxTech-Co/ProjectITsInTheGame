@@ -1,5 +1,4 @@
 import nl.saxion.app.SaxionApp;
-
 import java.awt.*;
 
 public class Application implements Runnable {
@@ -8,9 +7,31 @@ public class Application implements Runnable {
         SaxionApp.start(new Application(), 750, 600);
     }
 
+    //TACO
+    String taco = "media/graphics/characters/TacoV4Default.png";
+    int tacoHeight = 64;
+    int tacoWidth = 88;
+    int xCoordinateTaco = 325;
+    int yCoordinateTaco = 300;
+
+    //SYSTEM
+    double health = 3;
+    int currentLevel = 0;
+
+    //LEVEL
+    String roomOne = "media/graphics/levels/Start_veld.png";
+    boolean levelActive = false;
+
+
     public void run() {
         //Test method to show example of sizes
-        testRun();
+        //testRun();
+        selectLevel();
+        while(levelActive){
+            if(currentLevel == 1){
+                levelOne();
+            }
+        }
 
     }
 
@@ -59,4 +80,83 @@ public class Application implements Runnable {
 
     }
 
+    public void damage(double damageAmount){
+        health = health - damageAmount;
+    }
+
+    //Draw & move
+    public void dummyDraw(){
+        SaxionApp.drawImage(taco,xCoordinateTaco, yCoordinateTaco, tacoWidth, tacoHeight);
+    }
+
+    public void drawTaco(){
+        SaxionApp.removeLastDraw();
+        SaxionApp.drawImage(taco,xCoordinateTaco, yCoordinateTaco, tacoWidth, tacoHeight);
+    }
+     public void moveUp(){
+        yCoordinateTaco = yCoordinateTaco - 64;
+         drawTaco();
+     }
+
+    public void moveDown(){
+        yCoordinateTaco = yCoordinateTaco + 64;
+        drawTaco();
+    }
+
+    public void moveLeft(){
+        xCoordinateTaco = xCoordinateTaco - 88;
+        drawTaco();
+    }
+
+    public void moveRight(){
+        xCoordinateTaco = xCoordinateTaco + 88;
+        drawTaco();
+    }
+
+    public void moveCharacter(){
+        char input = SaxionApp.readChar();
+        SaxionApp.printLine(input);
+        if(input == 's' && yCoordinateTaco < (SaxionApp.getHeight() - 114)){
+            moveDown();
+        } else if(input == 'w' && yCoordinateTaco > (214)){
+            moveUp();
+        } else if(input == 'a' && xCoordinateTaco > (88)){
+            moveLeft();
+        } else if(input == 'd' && xCoordinateTaco < (SaxionApp.getWidth() - 138)){
+            moveRight();
+        }
+    }
+
+    //menu's
+    public void escapeMenu(){
+        //menu
+    }
+
+    public void selectLevel(){
+        while(!levelActive){
+            char input = SaxionApp.readChar();
+            if(input == '1'){
+                SaxionApp.clear();
+                levelActive = true;
+                currentLevel = 1;
+            }
+        }
+    }
+
+
+    //Levels
+    public void levelOne(){
+        health = 3;
+        drawRoomOne();
+        while(levelActive){
+            moveCharacter();
+        }
+    }
+
+    public void drawRoomOne(){
+        SaxionApp.clear();
+        SaxionApp.drawImage(roomOne,0,100,750,500);
+        dummyDraw();
+        drawTaco();
+    }
 }
