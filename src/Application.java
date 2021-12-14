@@ -15,21 +15,42 @@ public class Application implements Runnable {
     int yCoordinateTaco = 300;
 
     //SYSTEM
-    double health = 3;
-    int currentLevel = 0;
+    double health = 3.0;
+    int currentLevel = 1;
+    String fullHeart = "media/graphics/loading/Tomato_Full_Heart.png";
+    String halfHeart = "media/graphics/loading/Tomato_Half_Heart.png";
+    int heartWidth = 50;
+    int heartHeight = 50;
+    int xHeartOne = 550;
+    int yHeartOne = 25;
+    int xHeartTwo = 625;
+    int yHeartTwo = 25;
+    int xHeartThree = 700;
+    int yHeartThree = 25;
 
     //LEVEL
     String roomOne = "media/graphics/levels/Start_veld.png";
-    boolean levelActive = false;
+    boolean levelActive = true;
 
 
     public void run() {
         //Test method to show example of sizes
         //testRun();
-        selectLevel();
+        SaxionApp.print("Press any button to start!");
+        SaxionApp.pause();
         while(levelActive){
             if(currentLevel == 1){
                 levelOne();
+            } else if(currentLevel == 2){
+                //level2
+            } else if(currentLevel == 3){
+                //level3
+            } else if(currentLevel == 4){
+                //level4
+            } else if(currentLevel == 5){
+                //level5
+            } else if(currentLevel == 6){
+                //level6
             }
         }
 
@@ -132,24 +153,49 @@ public class Application implements Runnable {
         //menu
     }
 
-    public void selectLevel(){
-        while(!levelActive){
-            char input = SaxionApp.readChar();
-            if(input == '1'){
-                SaxionApp.clear();
-                levelActive = true;
-                currentLevel = 1;
-            }
+
+    //NOT WORKING YET!!!
+    /*public void drawHealth(){
+        if(health == 3.0){
+            SaxionApp.removeLastDraw();
+            SaxionApp.removeLastDraw();
+            SaxionApp.removeLastDraw();
+            SaxionApp.drawImage(fullHeart, xHeartOne, yHeartOne, heartWidth, heartHeight);
+            SaxionApp.drawImage(fullHeart, xHeartTwo, yHeartTwo, heartWidth, heartHeight);
+            SaxionApp.drawImage(fullHeart, xHeartThree, yHeartThree, heartWidth, heartHeight);
+        } else if(health == 2.5){
+            SaxionApp.removeLastDraw();
+            SaxionApp.removeLastDraw();
+            SaxionApp.removeLastDraw();
+            SaxionApp.drawImage(fullHeart, xHeartOne, yHeartOne, heartWidth, heartHeight);
+            SaxionApp.drawImage(fullHeart, xHeartTwo, yHeartTwo, heartWidth, heartHeight);
+            SaxionApp.drawImage(halfHeart, xHeartThree, yHeartThree, heartWidth, heartHeight);
+        } else if(health == 2.0){
+            SaxionApp.removeLastDraw();
+            SaxionApp.removeLastDraw();
+            SaxionApp.drawImage(fullHeart, xHeartOne, yHeartOne, heartWidth, heartHeight);
+            SaxionApp.drawImage(fullHeart, xHeartTwo, yHeartTwo, heartWidth, heartHeight);
+        } else if(health == 1.5){
+            SaxionApp.removeLastDraw();
+            SaxionApp.removeLastDraw();
+            SaxionApp.drawImage(fullHeart, xHeartOne, yHeartOne, heartWidth, heartHeight);
+            SaxionApp.drawImage(halfHeart, xHeartTwo, yHeartTwo, heartWidth, heartHeight);
+        } else if(health == 1.0){
+            SaxionApp.removeLastDraw();
+            SaxionApp.drawImage(fullHeart, xHeartOne, yHeartOne, heartWidth, heartHeight);
+        } else if(health == 0.5){
+            SaxionApp.removeLastDraw();
+            SaxionApp.drawImage(halfHeart, xHeartOne, yHeartOne, heartWidth, heartHeight);
         }
-    }
+    }*/
 
 
     //Levels
     public void levelOne(){
-        health = 3;
         drawRoomOne();
         while(levelActive){
             moveCharacter();
+            //drawHealth();
         }
     }
 
