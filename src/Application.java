@@ -15,18 +15,16 @@ public class Application implements Runnable {
     int yCoordinateTaco = 300;
 
     //SYSTEM
-    double health = 3.0;
+    int health = 4;
     int currentLevel = 1;
     String fullHeart = "media/graphics/loading/Tomato_Full_Heart.png";
     String halfHeart = "media/graphics/loading/Tomato_Half_Heart.png";
     int heartWidth = 50;
     int heartHeight = 50;
-    int xHeartOne = 550;
+    int xHeartOne = 625;
     int yHeartOne = 25;
-    int xHeartTwo = 625;
+    int xHeartTwo = 700;
     int yHeartTwo = 25;
-    int xHeartThree = 700;
-    int yHeartThree = 25;
 
     //LEVEL
     String roomOne = "media/graphics/levels/Start_veld.png";
@@ -101,7 +99,7 @@ public class Application implements Runnable {
 
     }
 
-    public void damage(double damageAmount){
+    public void damage(int damageAmount){
         health = health - damageAmount;
     }
 
@@ -156,7 +154,7 @@ public class Application implements Runnable {
 
     //NOT WORKING YET!!!
     /*public void drawHealth(){
-        if(health == 3.0){
+        if(health == 4){
             SaxionApp.removeLastDraw();
             SaxionApp.removeLastDraw();
             SaxionApp.removeLastDraw();
