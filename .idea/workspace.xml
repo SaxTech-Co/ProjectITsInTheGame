@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8270d552-ef0e-4825-ba14-29727f69b9a4" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/media/graphics/levels/room1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/graphics/levels/room2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/graphics/levels/room3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/graphics/levels/Start_veld.pdn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/graphics/levels/Start_veld.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/STCProjectITsInTheGame/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/STCProjectITsInTheGame/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +43,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -65,13 +59,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,6 +98,7 @@
       <workItem from="1640083448935" duration="1325000" />
       <workItem from="1640250981011" duration="261000" />
       <workItem from="1642354029709" duration="4754000" />
+      <workItem from="1642364172331" duration="148000" />
     </task>
     <servers />
   </component>
@@ -118,6 +115,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
