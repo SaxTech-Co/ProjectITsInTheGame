@@ -14,12 +14,16 @@ public class Application implements Runnable {
     int xCoordinateTaco = 325;
     int yCoordinateTaco = 300;
 
+    //BOSSES
+    Boss spaghettiMonster = new Boss("Spaghetti Monster", 50, "media/graphics/characters/SpaghettiMonsterEndBossV2Size4_Left.png", 400, 200, 250, 250);
+
     //SYSTEM
     int health = 4;
     int currentRoom = 1;
     int lastRoom = 1;
-    String fullHeart = "media/graphics/loading/Tomato_Full_Heart.png";
-    String halfHeart = "media/graphics/loading/Tomato_Half_Heart.png";
+    boolean roomClear = false;
+    String fullHeart = "media/graphics/Tomato_Full_Heart.png";
+    String halfHeart = "media/graphics/Tomato_Half_Heart.png";
     int heartWidth = 50;
     int heartHeight = 50;
     int xHeartOne = 625;
@@ -35,6 +39,7 @@ public class Application implements Runnable {
 
 
     public void run() {
+
         //Test method to show example of sizes
         //testRun();
         SaxionApp.print("Press any button to start!");
@@ -75,8 +80,8 @@ public class Application implements Runnable {
         SaxionApp.setFill(Color.black);
         SaxionApp.drawRectangle(0,0,750,100);
 //        SaxionApp.drawImage("media/graphics/levels/start_veld.png",0,100,750,500);
-        SaxionApp.drawImage("media/graphics/characters/SpaghettiMonsterEndBossV2Size4.png", 100, 200, 250,250);
-        SaxionApp.drawImage("media/graphics/characters/TacoV4Default.png", 500, 300, 88,64);
+        SaxionApp.drawImage("media/graphics/characters/SpaghettiMonsterEndBossV2Size4_Left.png", 400, 200, 250,250);
+        SaxionApp.drawImage("media/graphics/characters/TacoV4Default.png", 200, 300, 88,64);
         SaxionApp.sleep(2);
         loadScreen();
         unloadScreen();
@@ -87,26 +92,45 @@ public class Application implements Runnable {
 
     private void loadScreen() {
         SaxionApp.drawImage("media/graphics/loading/1.png",0,100,750,500);
-        SaxionApp.sleep(0.25);
+        SaxionApp.sleep(0.05);
+        SaxionApp.drawImage("media/graphics/loading/1.png",0,100,750,500);
+        SaxionApp.sleep(0.05);
         SaxionApp.drawImage("media/graphics/loading/2.png",0,100,750,500);
-        SaxionApp.sleep(0.25);
+        SaxionApp.sleep(0.05);
+        SaxionApp.drawImage("media/graphics/loading/2.png",0,100,750,500);
+        SaxionApp.sleep(0.1);
+        SaxionApp.drawImage("media/graphics/loading/2.png",0,100,750,500);
+        SaxionApp.sleep(0.1);
         SaxionApp.drawImage("media/graphics/loading/3.png",0,100,750,500);
-        SaxionApp.sleep(0.25);
-        SaxionApp.drawImage("media/graphics/loading/4.png",0,100,750,500);
-        SaxionApp.sleep(0.25);
+        SaxionApp.sleep(0.1);
+        SaxionApp.drawImage("media/graphics/loading/3.png",0,100,750,500);
+        SaxionApp.sleep(0.1);
+        SaxionApp.drawImage("media/graphics/loading/3.png",0,100,750,500);
+        SaxionApp.sleep(0.1);
+        SaxionApp.drawImage("media/graphics/loading/3.png",0,100,750,500);
         SaxionApp.pause();
 
     }
 
     private void unloadScreen() {
         SaxionApp.removeLastDraw();
-        SaxionApp.sleep(0.25);
+        SaxionApp.sleep(0.05);
         SaxionApp.removeLastDraw();
-        SaxionApp.sleep(0.25);
+        SaxionApp.sleep(0.05);
         SaxionApp.removeLastDraw();
-        SaxionApp.sleep(0.25);
+        SaxionApp.sleep(0.05);
         SaxionApp.removeLastDraw();
-        SaxionApp.sleep(0.25);
+        SaxionApp.sleep(0.05);
+        SaxionApp.removeLastDraw();
+        SaxionApp.sleep(0.05);
+        SaxionApp.removeLastDraw();
+        SaxionApp.sleep(0.05);
+        SaxionApp.removeLastDraw();
+        SaxionApp.sleep(0.05);
+        SaxionApp.removeLastDraw();
+        SaxionApp.sleep(0.05);
+        SaxionApp.removeLastDraw();
+        SaxionApp.sleep(0.05);
         SaxionApp.pause();
 
     }
@@ -123,6 +147,60 @@ public class Application implements Runnable {
     public void drawTaco(){
         SaxionApp.removeLastDraw();
         SaxionApp.drawImage(taco, xCoordinateTaco, yCoordinateTaco, tacoWidth, tacoHeight);
+        //checkHostileOverlap();
+        if (xCoordinateTaco >= spaghettiMonster.xCoord-50 && xCoordinateTaco <= spaghettiMonster.xCoord-50 + spaghettiMonster.width
+                && yCoordinateTaco >= spaghettiMonster.yCoord && yCoordinateTaco <= spaghettiMonster.yCoord + spaghettiMonster.height-50) {
+            //SaxionApp.drawRectangle(50,50,300,300);
+            drawFight();
+        }
+    }
+
+    public void drawFight(){
+        loadScreen();
+        SaxionApp.clear();
+        SaxionApp.drawImage(roomOne,0,100,750,500);
+        SaxionApp.drawImage(spaghettiMonster.image, spaghettiMonster.xCoord, spaghettiMonster.yCoord, spaghettiMonster.width,spaghettiMonster.height);
+        SaxionApp.drawImage(taco, 225, 300, tacoWidth, tacoHeight);
+        SaxionApp.drawImage("media/graphics/loading/1.png",0,100,750,500);
+        SaxionApp.drawImage("media/graphics/loading/1.png",0,100,750,500);
+        SaxionApp.drawImage("media/graphics/loading/2.png",0,100,750,500);
+        SaxionApp.drawImage("media/graphics/loading/2.png",0,100,750,500);
+        SaxionApp.drawImage("media/graphics/loading/2.png",0,100,750,500);
+        SaxionApp.drawImage("media/graphics/loading/3.png",0,100,750,500);
+        SaxionApp.drawImage("media/graphics/loading/3.png",0,100,750,500);
+        SaxionApp.drawImage("media/graphics/loading/3.png",0,100,750,500);
+        SaxionApp.drawImage("media/graphics/loading/3.png",0,100,750,500);
+        unloadScreen();
+        SaxionApp.pause();
+
+        SaxionApp.setFill(Color.black);
+        SaxionApp.setBorderColor(Color.black);
+        SaxionApp.drawRectangle(0,450, SaxionApp.getWidth(),SaxionApp.getHeight());
+        SaxionApp.setBorderColor(Color.white);
+        SaxionApp.drawText("J - Attack [5dmg]", 75, 475, 20);
+        SaxionApp.drawText("K - SpecialAttack [10dmg]", 75, 505, 20);
+        SaxionApp.drawText("L - Escape(DEV)", 75, 535, 20);
+        SaxionApp.drawText(spaghettiMonster.name + " HP: " + String.valueOf(spaghettiMonster.combatHp), 375, 505, 20);
+
+        boolean validInput = false;
+        int monsterHP = spaghettiMonster.combatHp;
+        while (validInput = true) {
+            char userInput = SaxionApp.readChar();
+            SaxionApp.removeLastDraw();
+            if (userInput == 'j') {
+                spaghettiMonster.combatHp -= 5;
+                System.out.println(spaghettiMonster.combatHp);
+            } else if (userInput == 'k') {
+                spaghettiMonster.combatHp -= 10;
+                System.out.println(spaghettiMonster.combatHp);
+            } else if (userInput == 'l') {
+                System.out.println(spaghettiMonster.combatHp);
+            } else {
+                System.out.println("INVALID INPUT");
+            }
+            SaxionApp.drawText(spaghettiMonster.name + " HP: " + spaghettiMonster.combatHp, 375, 505, 20);
+        }
+        SaxionApp.pause();
     }
 
      public void moveUp(){
@@ -170,6 +248,7 @@ public class Application implements Runnable {
         }
         lastRoom = 1;
         drawRoomOne();
+
         while(levelActive){
             moveCharacter();
             //to room 2
@@ -210,9 +289,19 @@ public class Application implements Runnable {
 
     public void drawRoomOne(){
         SaxionApp.clear();
+
+        SaxionApp.drawImage(fullHeart, 300, 20, 50, 50);
+        SaxionApp.drawImage(fullHeart, 360, 20, 50, 50);
+        SaxionApp.drawImage(halfHeart, 420, 20, 50, 50);
+
         SaxionApp.drawImage(roomOne,0,100,750,500);
+
+        if (roomClear == false) {
+            SaxionApp.drawImage(spaghettiMonster.image, spaghettiMonster.xCoord, spaghettiMonster.yCoord, spaghettiMonster.width,spaghettiMonster.height);
+        }
         dummyDraw();
         drawTaco();
+
     }
 
     public void drawRoomTwo(){
