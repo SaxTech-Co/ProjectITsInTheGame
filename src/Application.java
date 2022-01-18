@@ -296,7 +296,7 @@ public class Application implements Runnable {
 
     public void moveCharacter(){
         char input = SaxionApp.readChar();
-        SaxionApp.printLine(input);
+        System.out.print(input);
         if(input == 's' && yCoordinateTaco < (SaxionApp.getHeight() - 100)){
             moveDown();
         } else if(input == 'w' && yCoordinateTaco > (164)){
