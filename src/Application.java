@@ -1,5 +1,6 @@
 import nl.saxion.app.SaxionApp;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Application implements Runnable {
 
@@ -20,7 +21,16 @@ public class Application implements Runnable {
     int yCoordinateTaco = 300;
 
     //BOSSES
+    ArrayList<Boss> bosses = new ArrayList<>();
     Boss spaghettiMonster = new Boss("Spaghetti Monster", 50, "media/graphics/characters/SpaghettiMonsterEndBossV2Size4_Left.png", 400, 200, 250, 250);
+    String spaghettiHit = "media/graphics/damage/SpaghettiHit.png";
+    Boss suShi = new Boss("Su Shi", 15, "media/graphics/characters/SushiNeutral.png", 400, 200, 100, 100);
+    String suShiHit = "media/graphics/damage/SushiHit.png";
+
+    public void addBosses () {
+        bosses.add(spaghettiMonster);
+        bosses.add(suShi);
+    }
 
     //SYSTEM
     int health = 6;
@@ -94,25 +104,25 @@ public class Application implements Runnable {
         SaxionApp.readChar();
     }
 
-    private void testRun() {
-        SaxionApp.turnBorderOff();
-        SaxionApp.drawRectangle(0,100,750,500);
-        SaxionApp.drawLine(0,150,750,150); //top
-        SaxionApp.drawLine(0,550,750,550); //bottom
-        SaxionApp.drawLine(50, 0, 50, 600); // left
-        SaxionApp.drawLine(700, 0, 700, 600); // right
-        SaxionApp.setFill(Color.black);
-        SaxionApp.drawRectangle(0,0,750,100);
-//        SaxionApp.drawImage("media/graphics/levels/start_veld.png",0,100,750,500);
-        SaxionApp.drawImage("media/graphics/characters/SpaghettiMonsterEndBossV2Size4_Left.png", 400, 200, 250,250);
-        SaxionApp.drawImage("media/graphics/characters/TacoV4Default.png", 200, 300, 88,64);
-        SaxionApp.sleep(2);
-        loadScreen();
-        unloadScreen();
-
-        SaxionApp.readChar();
-
-    }
+//    private void testRun() {
+//        SaxionApp.turnBorderOff();
+//        SaxionApp.drawRectangle(0,100,750,500);
+//        SaxionApp.drawLine(0,150,750,150); //top
+//        SaxionApp.drawLine(0,550,750,550); //bottom
+//        SaxionApp.drawLine(50, 0, 50, 600); // left
+//        SaxionApp.drawLine(700, 0, 700, 600); // right
+//        SaxionApp.setFill(Color.black);
+//        SaxionApp.drawRectangle(0,0,750,100);
+////        SaxionApp.drawImage("media/graphics/levels/start_veld.png",0,100,750,500);
+//        SaxionApp.drawImage("media/graphics/characters/SpaghettiMonsterEndBossV2Size4_Left.png", 400, 200, 250,250);
+//        SaxionApp.drawImage("media/graphics/characters/TacoV4Default.png", 200, 300, 88,64);
+//        SaxionApp.sleep(2);
+//        loadScreen();
+//        unloadScreen();
+//
+//        SaxionApp.readChar();
+//
+//    }
 
     public void damage(int damageAmount){
         health = health - damageAmount;
@@ -191,7 +201,8 @@ public class Application implements Runnable {
                 System.out.println("MONSTER DEFEATED");
                 //DEMO ENDING
                 loadScreen();
-                demoEnding();
+                drawRoomOne();
+//                demoEnding();
             } else {
                 damage(1);
             }
@@ -249,24 +260,24 @@ public class Application implements Runnable {
 
     //------------------------------------------DEMO ENDING-----------------------------------------
 
-    private void demoEnding() {
-        SaxionApp.clear();
-        SaxionApp.drawImage(roomOne, 0, 50, 750,500);
-        SaxionApp.drawImage("media/graphics/loading/1.png",0,50, 750,500);
-        SaxionApp.drawImage("media/graphics/loading/1.png",0,50, 750,500);
-        SaxionApp.setFill(Color.black);
-        SaxionApp.setBorderColor(Color.black);
-        SaxionApp.drawRectangle(0,0,750,50);
-        SaxionApp.drawRectangle(0,550,750,50);
-        SaxionApp.setBorderColor(Color.red);
-        SaxionApp.drawText("The Spaghetti Monster has been slain", 130, 200, 30);
-        SaxionApp.setBorderColor(Color.white);
-        SaxionApp.drawText("and you have finished this demo game.", 125, 300, 30);
-        SaxionApp.drawText("Thank you for playing", 190, 400, 40);
-        toMenuLoading();
-        unloadScreen();
-        SaxionApp.sleep(999);
-    }
+//    private void demoEnding() {
+//        SaxionApp.clear();
+//        SaxionApp.drawImage(roomOne, 0, 50, 750,500);
+//        SaxionApp.drawImage("media/graphics/loading/1.png",0,50, 750,500);
+//        SaxionApp.drawImage("media/graphics/loading/1.png",0,50, 750,500);
+//        SaxionApp.setFill(Color.black);
+//        SaxionApp.setBorderColor(Color.black);
+//        SaxionApp.drawRectangle(0,0,750,50);
+//        SaxionApp.drawRectangle(0,550,750,50);
+//        SaxionApp.setBorderColor(Color.red);
+//        SaxionApp.drawText("The Spaghetti Monster has been slain", 130, 200, 30);
+//        SaxionApp.setBorderColor(Color.white);
+//        SaxionApp.drawText("and you have finished this demo game.", 125, 300, 30);
+//        SaxionApp.drawText("Thank you for playing", 190, 400, 40);
+//        toMenuLoading();
+//        unloadScreen();
+//        SaxionApp.sleep(999);
+//    }
 
     //-------------------------------------------MOVEMENT-------------------------------------------
 
