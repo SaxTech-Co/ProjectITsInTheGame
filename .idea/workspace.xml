@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8270d552-ef0e-4825-ba14-29727f69b9a4" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/media/graphics/levels/room4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/graphics/levels/room1.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/graphics/levels/room1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/graphics/levels/room2.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/graphics/levels/room2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/graphics/levels/room3.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/graphics/levels/room3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/STCProjectITsInTheGame/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/STCProjectITsInTheGame/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,22 +57,20 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Application" />
+      <module name="STCProjectITsInTheGame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Application" />
-      <module name="STCProjectITsInTheGame" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,7 +100,10 @@
       <workItem from="1639485675116" duration="372000" />
       <workItem from="1640084027084" duration="1263000" />
       <workItem from="1642431696864" duration="25444000" />
-      <workItem from="1642945779182" duration="1649000" />
+      <workItem from="1642501935187" duration="526000" />
+      <workItem from="1642503268895" duration="112000" />
+      <workItem from="1642505119054" duration="30000" />
+      <workItem from="1642943905866" duration="2397000" />
     </task>
     <servers />
   </component>
